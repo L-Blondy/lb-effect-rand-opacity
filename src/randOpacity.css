@@ -1,21 +1,37 @@
-.toggle-to-animate {
+.toggle-popout {
   -webkit-animation-name: popout;
           animation-name: popout;
   -webkit-animation-duration: inherit;
           animation-duration: inherit;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  opacity: 0.1;
 }
 
 @-webkit-keyframes popout {
-  to {
-    opacity: 0.1;
+  35% {
+    opacity: 1;
   }
 }
 
 @keyframes popout {
-  to {
-    opacity: 0.1;
+  35% {
+    opacity: 1;
+  }
+}
+
+.toggle-fadein {
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: inherit;
+          animation-duration: inherit;
+}
+
+@-webkit-keyframes fadein {
+  35% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  35% {
+    opacity: 0;
   }
 }

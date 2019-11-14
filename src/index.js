@@ -13,9 +13,9 @@ for ( let i = 0; i < boardMap.length; i++ ) {
 
 const container = document.querySelector( ".board" );
 const options = {
-	frequency: 5,
-	duration: 2000,
-	fade: true,
+	frequency: 2,
+	duration: 10000,
+	fadeTo: 0,
 }
 randOpacity( container, options )
 

@@ -1,12 +1,21 @@
-.toggle-to-animate {
+.toggle-popout {
      animation-name: popout;
      animation-duration: inherit;
-     animation-fill-mode: forwards;
-     opacity: 0.1;
 }
 
 @keyframes popout {
-     to {
-          opacity: 0.1;
+     35% {
+          opacity: 1;
+     }
+}
+
+.toggle-fadein {
+     animation-name: fadein;
+     animation-duration: inherit;
+}
+
+@keyframes fadein {
+     35% {
+          opacity: 0;
      }
 }
