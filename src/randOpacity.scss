@@ -1,0 +1,12 @@
+.toggle-to-animate {
+     animation-name: popout;
+     animation-duration: inherit;
+     animation-fill-mode: forwards;
+     opacity: 0.1;
+}
+
+@keyframes popout {
+     to {
+          opacity: 0.1;
+     }
+}

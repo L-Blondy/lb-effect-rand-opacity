@@ -1,0 +1,21 @@
+.toggle-to-animate {
+  -webkit-animation-name: popout;
+          animation-name: popout;
+  -webkit-animation-duration: inherit;
+          animation-duration: inherit;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0.1;
+}
+
+@-webkit-keyframes popout {
+  to {
+    opacity: 0.1;
+  }
+}
+
+@keyframes popout {
+  to {
+    opacity: 0.1;
+  }
+}
