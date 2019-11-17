@@ -39,7 +39,7 @@ const randOpacity = ( container, nodeList, { frequency = 5, duration = 2000, fad
 			throw new Error(
 				"function randOpacity(nodeList, options) : frequency option must be between 1 and 10 included"
 			)
-		else if ( ++count % ( 33 - frequency * 3 ) === 0 ) {
+		else if ( ++count % ( 55 - frequency * 5 ) === 0 ) {
 			let nextIndex = getRandIndex( nodeList.length )
 
 			while ( forbiddenIndex.includes( nextIndex ) ) {
