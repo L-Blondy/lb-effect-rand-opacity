@@ -12,10 +12,11 @@ for ( let i = 0; i < boardMap.length; i++ ) {
 }
 
 const container = document.querySelector( ".board" );
+const nodeList = boardMap;
 const options = {
 	frequency: 2,
 	duration: 10000,
-	fadeTo: 0,
+	fadeTo: 1,
 }
-randOpacity( container, options )
+randOpacity( container, nodeList, options )
 

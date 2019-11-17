@@ -1,8 +1,11 @@
+.lb-effect-rand-opacity-container * {
+  -webkit-animation-duration: inherit;
+          animation-duration: inherit;
+}
+
 .toggle-popout {
   -webkit-animation-name: popout;
           animation-name: popout;
-  -webkit-animation-duration: inherit;
-          animation-duration: inherit;
 }
 
 @-webkit-keyframes popout {
@@ -20,8 +23,6 @@
 .toggle-fadein {
   -webkit-animation-name: fadein;
           animation-name: fadein;
-  -webkit-animation-duration: inherit;
-          animation-duration: inherit;
 }
 
 @-webkit-keyframes fadein {

@@ -28,8 +28,9 @@ const toggleOpacity = ( elem, fadeTo ) => {
 	}
 }
 
-const randOpacity = ( container, { frequency = 5, duration = 2000, fadeTo = null } ) => {
+const randOpacity = ( container, nodeList, { frequency = 5, duration = 2000, fadeTo = null } ) => {
 	let count = 0;
+	container.className += " lb-effect-rand-opacity-container";
 	container.style.animationDuration = duration + "ms";
 	const forbiddenIndex = []
 
@@ -39,17 +40,17 @@ const randOpacity = ( container, { frequency = 5, duration = 2000, fadeTo = null
 				"function randOpacity(nodeList, options) : frequency option must be between 1 and 10 included"
 			)
 		else if ( ++count % ( 33 - frequency * 3 ) === 0 ) {
-			let nextIndex = getRandIndex( container.children.length )
+			let nextIndex = getRandIndex( nodeList.length )
 
 			while ( forbiddenIndex.includes( nextIndex ) ) {
-				nextIndex = getRandIndex( container.children.length )
+				nextIndex = getRandIndex( nodeList.length )
 			}
 			forbiddenIndex.push( nextIndex );
 
-			if ( forbiddenIndex.length >= container.children.length / 5 )
+			if ( forbiddenIndex.length >= nodeList.length / 5 )
 				forbiddenIndex.shift()
 
-			toggleOpacity( container.children[ nextIndex ], fadeTo )
+			toggleOpacity( nodeList[ nextIndex ], fadeTo )
 		}
 		window.requestAnimationFrame( randOpacity_wrapped )
 	}
