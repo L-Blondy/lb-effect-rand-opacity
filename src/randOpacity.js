@@ -28,32 +28,38 @@ const toggleOpacity = ( elem, fadeTo ) => {
 	}
 }
 
-const randOpacity = ( container, nodeList, { frequency = 5, duration = 2000, fadeTo = null } ) => {
-	let count = 0;
+function randOpacity ( container, nodeList, { frequency = 5, duration = 2000, fadeTo = null } ) {
+	this.count = 0;
 	container.className += " lb-effect-rand-opacity-container";
 	container.style.animationDuration = duration + "ms";
-	const forbiddenIndex = []
+	this.forbiddenIndex = [];
+	this.frameID = 0;
+	this.pause = () => {
+		window.cancelAnimationFrame( this.frameID )
+	}
+	this.start = () => {
+		randOpacity_wrapped()
+	}
 
 	const randOpacity_wrapped = () => {
 		if ( frequency < 1 || frequency > 10 )
 			throw new Error(
 				"function randOpacity(nodeList, options) : frequency option must be between 1 and 10 included"
 			)
-		else if ( ++count % ( 55 - frequency * 5 ) === 0 ) {
+		else if ( ++this.count % ( 55 - frequency * 5 ) === 0 ) {
 			let nextIndex = getRandIndex( nodeList.length )
 
-			while ( forbiddenIndex.includes( nextIndex ) ) {
+			while ( this.forbiddenIndex.includes( nextIndex ) ) {
 				nextIndex = getRandIndex( nodeList.length )
 			}
-			forbiddenIndex.push( nextIndex );
+			this.forbiddenIndex.push( nextIndex );
 
-			if ( forbiddenIndex.length >= nodeList.length / 5 )
-				forbiddenIndex.shift()
+			if ( this.forbiddenIndex.length >= nodeList.length / 5 )
+				this.forbiddenIndex.shift()
 
 			toggleOpacity( nodeList[ nextIndex ], fadeTo )
 		}
-		window.requestAnimationFrame( randOpacity_wrapped )
+		this.frameID = window.requestAnimationFrame( randOpacity_wrapped )
 	}
-	randOpacity_wrapped()
 }
 export default randOpacity;

@@ -18,5 +18,8 @@ const options = {
 	duration: 10000,
 	fadeTo: 1,
 }
-randOpacity( container, nodeList, options )
+let test = new randOpacity( container, nodeList, options )
+
+test.start()
+setTimeout( () => test.pause(), 5000 )
 
