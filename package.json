@@ -1,6 +1,6 @@
 {
 	"name": "lb-effect-rand-opacity",
-	"version": "1.1.8",
+	"version": "1.1.9",
 	"description": "",
 	"main": "dist/bundle.js",
 	"scripts": {
@@ -9,7 +9,6 @@
 		"deploy": "npm run build && npm publish",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
@@ -20,5 +19,12 @@
 	},
 	"files": [
 		"dist/*"
+	],
+	"keywords": [
+		"random opacity",
+		"opacity effect",
+		"animation",
+		"opacity",
+		"opacity animation"
 	]
 }
