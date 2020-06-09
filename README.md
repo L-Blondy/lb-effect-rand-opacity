@@ -5,7 +5,7 @@
 Compatible with IE11+
 
 ## install
-> npm install --save-dev lb-effect-rand-opacity
+> npm i lb-effect-rand-opacity
 
 ## Usage
 ```
